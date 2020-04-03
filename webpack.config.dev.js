@@ -7,7 +7,7 @@ process.env.NODE_ENV = 'development';
 module.exports = {
   mode: 'development',
   target: 'web',
-  devTool: 'cheap-module-source-map',
+  devtool: 'cheap-module-source-map',
   entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -15,9 +15,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    stats: 'minimul',
+    stats: 'minimal',
     overlay: true,
-    historyApiFallbacks: true,
+    historyApiFallback: true,
     disableHostCheck: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
     https: false
@@ -28,15 +28,15 @@ module.exports = {
       favicon: "src/favicon.ico"
     })
   ],
-  modules: {
+  module: {
     rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_module/,
-        user: ["bable-loader"]
+        use: ["babel-loader"]
       },
       {
         test: /(\.css)$/,
-        user: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
