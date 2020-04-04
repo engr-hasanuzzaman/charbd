@@ -2,7 +2,6 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import HomePage from './home/HomePage';
 import AboutPage from './about/AboutPage';
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => (
   <div className='container-fluid'>
