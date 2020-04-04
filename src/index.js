@@ -1,9 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import App from './components/App'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function Hi() {
-  // use debugger for debugging with dev tool on browser; 
-  return <h1 > Find the information about discount items neat to you < /h1>;
-}
-
-render( < Hi / > , document.getElementById('root'));
+render( <Router><App/></Router>, document.getElementById('root'));
