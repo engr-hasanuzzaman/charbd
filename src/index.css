@@ -1,8 +1,23 @@
 #root {
-    max-width: 865px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 nav {
     padding: 20px 0;
+}
+
+.ad-container {
+    border: 2px solid gray;
+    margin: 10px 0;
+    text-align: center;
+    background-color: lavender;
+}
+
+.ad-container .title {
+    font-size: 1.2em;
+}
+
+.ad-container .desctiption {
+    font-size: 0.9em;
 }

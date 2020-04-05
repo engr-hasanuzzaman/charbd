@@ -6,8 +6,11 @@ function Header() {
   
   return(
     <nav>
-      <NavLink exact to='/' activeStyle={activeStyle}>Home Page</NavLink>{" | " } 
+      <NavLink exact to='/' activeStyle={activeStyle}>Home Page</NavLink>
+      {" | " } 
       <NavLink to='/about' activeStyle={activeStyle}>About</NavLink>
+      {" | " } 
+      <NavLink to='/advertisements' activeStyle={activeStyle}>Advertisements</NavLink>
     </nav>
   );
 }
