@@ -6,7 +6,7 @@ function Header() {
   
   return(
     <nav>
-      <NavLink exact to='/' activeStyle={activeStyle}>Home Page</NavLink> | 
+      <NavLink exact to='/' activeStyle={activeStyle}>Home Page</NavLink>{" | " } 
       <NavLink to='/about' activeStyle={activeStyle}>About</NavLink>
     </nav>
   );
