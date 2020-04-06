@@ -11,6 +11,8 @@ function Header() {
       <NavLink to='/about' activeStyle={activeStyle}>About</NavLink>
       {" | " } 
       <NavLink to='/advertisements' activeStyle={activeStyle}>Advertisements</NavLink>
+      {" | "}
+      <NavLink to='/courses' activeStyle={activeStyle}>Courses</NavLink>
     </nav>
   );
 }
