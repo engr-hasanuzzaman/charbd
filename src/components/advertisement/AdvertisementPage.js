@@ -16,26 +16,24 @@ class AdvertisementPage extends React.Component {
           description: 'Get 20 discount on your favorite Cloth', price: '3500 BDT'
         }
       ],
-      ad: { title: '', description: '' }
+      title: '',
+      description: '',
     }
 
     this.createNewOffer = this.createNewOffer.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  createNewOffer(){
-    console.log('new offer create' + this)
+  createNewOffer(event){
+    event.preventDefault();
+    const ad = {title: this.state.title, description: this.state.description };
+    this.setState((state) => {
+      return { ads: [...state.ads, ad], title: '', description: '' };
+    });
   }
 
-  handleTitleChange(e){
-    console.log('new value is ' + e.target.value);
-    this.setState((state, e) => (state.ad.title = e.target.value))
-  }
-
-  handleDescriptionChange(e){
-    console.log('new value is ' + e.target.value);
-    this.setState((state, e) => (state.ad.description = e.target.value))
+  handleChange(e) {
+    this.setState({[e.target.name]: e.target.value})
   }
 
   render(){
@@ -43,17 +41,17 @@ class AdvertisementPage extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-8">
-            {this.state.ads.map((ad) => (
-              <AdvertisementComponent key={ad.title} title={ad.title} description={ad.description}/>
+            {this.state.ads.map((ad, i) => (
+              <AdvertisementComponent key={i} title={ad.title} description={ad.description}/>
             ))}
           </div>
           <div className="col-4">
-            <form action="#">
+            <form action="#" onChange={this.handleChange}>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="title" value={this.state.ad.title} onChange={this.handleTitleChange}/>
+                <input type="text" className="form-control" name='title' value={this.state.title} />
               </div>
               <div className="form-group"></div>
-                <input type="text" className="form-control" placeholder="description" value={this.state.ad.description} onChange={this.handleDescriptionChange}/>
+                <input type="text" className="form-control" name='description' value={this.state.description}/>
               <div className="form-group">
                 <button className="btn btn-sm btn-success" type="submit" onClick={this.createNewOffer}>
                   Create New Offer
