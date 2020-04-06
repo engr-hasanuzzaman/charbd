@@ -1,13 +1,32 @@
-import React from 'react';
+import React from "react";
 
 class CoursesPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      course: {
+        title: "",
+      },
+    };
   }
 
-  render(){
-    return(
-      <h1>Course page</h1>
+  handleChange = (event) => {
+    const course = { ...this.state.course, title: event.target.value };
+    this.setState({ course: course });
+  };
+
+  render() {
+    return (
+      <form>
+        <h2>Courses</h2>
+        <h2>Add Course</h2>
+        <input
+          type="text"
+          onChange={this.handleChange}
+          value={this.state.course.title}
+        />
+        <input type="submit" value="Save" />
+      </form>
     );
   }
 }
