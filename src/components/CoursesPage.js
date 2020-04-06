@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 class CoursesPage extends React.Component {
   constructor(props) {
     super(props);
+    console.log("passing props are", props);
     this.state = {
       course: {
         title: "",

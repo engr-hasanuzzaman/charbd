@@ -7,7 +7,7 @@ import "./index.css";
 import reduxConfiguration from "./redux/configureStore";
 import { Provider } from "react-redux";
 
-const store = reduxConfiguration({ coursers: [{ title: "first course" }] });
+const store = reduxConfiguration({ courses: [{ title: "first course" }] });
 render(
   <Provider store={store}>
     <Router>
