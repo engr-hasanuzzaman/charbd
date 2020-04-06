@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 class CoursesPage extends React.Component {
   constructor(props) {
@@ -26,9 +28,20 @@ class CoursesPage extends React.Component {
           value={this.state.course.title}
         />
         <input type="submit" value="Save" />
+        {this.props.courses.map((c, i) => (
+          <p key={i}>foo {c.title}</p>
+        ))}
       </form>
     );
   }
 }
+CoursesPage.propTypes = {
+  courses: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
 
-export default CoursesPage;
+function mapStateToProps(state) {
+  return { courses: state.courses };
+}
+
+export default connect(mapStateToProps)(CoursesPage);
