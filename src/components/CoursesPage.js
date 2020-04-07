@@ -9,25 +9,22 @@ class CoursesPage extends React.Component {
     console.log("passing props are", props);
     this.state = {
       course: {
-        title: "",
-      },
+        title: ""
+      }
     };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const course = { ...this.state.course, title: event.target.value };
+    // debugger;
     this.setState({ course: course });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-
-    const course = {
-      title: this.state.title,
-      description: this.state.description,
-    };
-
-    this.props.dispatch(courseActions.createCourse(course));
+    // debugger;
+    this.props.createCourse(this.state.course);
+    this.setState({ course: { title: "", description: "" } });
     // this.setState({ title: "", description: "" });
   };
 
@@ -51,11 +48,18 @@ class CoursesPage extends React.Component {
 }
 CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  createCourse: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
+  // debugger;
   return { courses: state.courses };
 }
 
-export default connect(mapStateToProps)(CoursesPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
