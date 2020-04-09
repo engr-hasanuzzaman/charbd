@@ -15,6 +15,11 @@ class CoursesPage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log("calling componentDidMount");
+    this.props.actions.loadCourses();
+  }
+
   handleChange = event => {
     const course = { ...this.state.course, title: event.target.value };
     // debugger;
@@ -49,7 +54,7 @@ class CoursesPage extends React.Component {
 }
 CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
-  actions: PropTypes.func.isRequired
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
