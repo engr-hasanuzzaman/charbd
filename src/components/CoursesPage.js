@@ -18,9 +18,16 @@ class CoursesPage extends React.Component {
   }
 
   componentDidMount() {
+    const { courses, authors } = this.props;
+
     console.log("calling componentDidMount");
-    this.props.courseActions.loadCourses();
-    this.props.authorActions.loadAuthor();
+    if (courses.length == 0) {
+      this.props.courseActions.loadCourses();
+    }
+
+    if (authors.length == 0) {
+      this.props.authorActions.loadAuthor();
+    }
   }
 
   handleChange = event => {
@@ -63,7 +70,7 @@ function mapStateToProps(state) {
             return {
               ...c,
               authorName: state.authors.find(a => {
-                debugger;
+                // debugger;
                 return a.id === c.authorId;
               }).name
             };
