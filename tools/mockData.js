@@ -1,5 +1,4 @@
-const courses = [
-  {
+const courses = [{
     id: 1,
     title: "Securing React Apps with Auth0",
     slug: "react-auth0-authentication-security",
@@ -45,7 +44,7 @@ const courses = [
     id: 7,
     title: "Clean Code: Writing Code for Humans",
     slug: "writing-clean-code-humans",
-    authorId: 1,
+    authorId: 3,
     category: "Software Practices"
   },
   {
@@ -66,15 +65,23 @@ const courses = [
     id: 10,
     title: "Web Component Fundamentals",
     slug: "web-components-shadow-dom",
-    authorId: 1,
+    authorId: 2,
     category: "HTML5"
   }
 ];
 
-const authors = [
-  { id: 1, name: "Cory House" },
-  { id: 2, name: "Scott Allen" },
-  { id: 3, name: "Dan Wahlin" }
+const authors = [{
+    id: 1,
+    name: "Cory House"
+  },
+  {
+    id: 2,
+    name: "Scott Allen"
+  },
+  {
+    id: 3,
+    name: "Dan Wahlin"
+  }
 ];
 
 const newCourse = {

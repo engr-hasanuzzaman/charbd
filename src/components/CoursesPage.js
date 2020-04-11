@@ -20,6 +20,7 @@ class CoursesPage extends React.Component {
   componentDidMount() {
     console.log("calling componentDidMount");
     this.props.courseActions.loadCourses();
+    this.props.authorActions.loadAuthor();
   }
 
   handleChange = event => {
@@ -53,7 +54,22 @@ CoursesPage.propTypes = {
 
 function mapStateToProps(state) {
   // debugger;
-  return { courses: state.courses };
+  return {
+    courses:
+      state.authors.length == 0
+        ? []
+        : state.courses.map(c => {
+            // debugger;
+            return {
+              ...c,
+              authorName: state.authors.find(a => {
+                debugger;
+                return a.id === c.authorId;
+              }).name
+            };
+          }),
+    authors: state.authors
+  };
 }
 
 function mapDispatchToProps(dispatch) {
