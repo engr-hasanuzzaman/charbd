@@ -1,10 +1,10 @@
 import * as types from './actionTypes';
 import * as authorApi from '../../api/authorApi';
 
-export function loadAuthorSuccess(courses) {
+export function loadAuthorSuccess(authors) {
   return {
-    type: types.LOAD_COURSES_SUCCESS,
-    courses
+    type: types.LOAD_AUTHOR_SUCCESS,
+    authors
   };
 }
 

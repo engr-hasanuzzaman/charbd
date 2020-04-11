@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as courseActions from "../redux/actions/courseActions";
 import { bindActionCreators } from "redux";
 import CourseList from "./CourseLIst";
+import * as authorActions from "../redux/actions/authorActions";
 
 class CoursesPage extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class CoursesPage extends React.Component {
 
   componentDidMount() {
     console.log("calling componentDidMount");
-    this.props.actions.loadCourses();
+    this.props.courseActions.loadCourses();
   }
 
   handleChange = event => {
@@ -30,7 +31,7 @@ class CoursesPage extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     // debugger;
-    this.props.actions.createCourse(this.state.course);
+    this.props.courseActions.createCourse(this.state.course);
     this.setState({ course: { title: "", description: "" } });
     // this.setState({ title: "", description: "" });
   };
@@ -46,7 +47,8 @@ class CoursesPage extends React.Component {
 }
 CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  courseActions: PropTypes.object.isRequired,
+  authorActions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
@@ -55,7 +57,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(courseActions, dispatch) };
+  return {
+    courseActions: bindActionCreators(courseActions, dispatch),
+    authorActions: bindActionCreators(authorActions, dispatch)
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
