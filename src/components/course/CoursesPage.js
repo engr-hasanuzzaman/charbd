@@ -54,7 +54,9 @@ class CoursesPage extends React.Component {
             <h1>Courses</h1>
           </div>
           <div className="col-6">
-            <Link to="courses/new">New Course</Link>
+            <Link to="courses/new" className="btn btn-smaller btn-success">
+              New Course
+            </Link>
           </div>
         </div>
 

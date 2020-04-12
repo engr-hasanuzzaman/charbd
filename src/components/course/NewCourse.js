@@ -47,7 +47,11 @@ function NewCourse() {
       </div>
 
       <div className="form-group">
-        <input type="submit" value="Save course" />
+        <input
+          type="submit"
+          value="Save course"
+          className="btn btn-smaller btn-success"
+        />
       </div>
     </form>
   );
