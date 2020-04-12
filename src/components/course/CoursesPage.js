@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as courseActions from "../redux/actions/courseActions";
+import * as courseActions from "../../redux/actions/courseActions";
 import { bindActionCreators } from "redux";
 import CourseList from "./CourseLIst";
-import * as authorActions from "../redux/actions/authorActions";
+import * as authorActions from "../../redux/actions/authorActions";
+import CourseForm from "./NewCourse";
+import { Link } from "react-router-dom";
 
 class CoursesPage extends React.Component {
   constructor(props) {
@@ -47,7 +49,15 @@ class CoursesPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Courses</h1>
+        <div className="row">
+          <div className="col-6">
+            <h1>Courses</h1>
+          </div>
+          <div className="col-6">
+            <Link to="courses/new">New Course</Link>
+          </div>
+        </div>
+
         <CourseList courses={this.props.courses} />
       </div>
     );
@@ -56,7 +66,8 @@ class CoursesPage extends React.Component {
 CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
   courseActions: PropTypes.object.isRequired,
-  authorActions: PropTypes.object.isRequired
+  authorActions: PropTypes.object.isRequired,
+  authors: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
