@@ -8,6 +8,7 @@
     "start:api": "node tools/apiServer.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
     "bootstrap": "4.3.1",
     "immer": "2.1.3",
     "prop-types": "15.7.2",
