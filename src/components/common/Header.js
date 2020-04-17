@@ -13,6 +13,8 @@ function Header() {
       <NavLink to='/advertisements' activeStyle={activeStyle}>Advertisements</NavLink>
       {" | "}
       <NavLink to='/courses' activeStyle={activeStyle}>Courses</NavLink>
+      {" | "}
+      <NavLink to='/test' activeStyle={activeStyle}>Material Design</NavLink>
     </nav>
   );
 }
