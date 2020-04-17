@@ -7,6 +7,7 @@ import PageNotFound from "./PageNotFound";
 import AdvertisementPage from "./advertisement/AdvertisementPage";
 import CoursesPage from "./course/CoursesPage";
 import NewCourse from "./course/NewCourse";
+import MaterialComponent from './material/Material';
 
 const App = () => (
   <div className="container-fluid">
@@ -17,6 +18,7 @@ const App = () => (
       <Route path="/advertisements" component={AdvertisementPage}></Route>
       <Route path="/courses/new" component={NewCourse}></Route>
       <Route path="/courses" component={CoursesPage}></Route>
+      <Route path="/test" component={MaterialComponent}></Route>
       <Route component={PageNotFound}></Route>
     </Switch>
   </div>
