@@ -5,8 +5,9 @@ import * as courseActions from "../../redux/actions/courseActions";
 import { bindActionCreators } from "redux";
 import CourseList from "./CourseLIst";
 import * as authorActions from "../../redux/actions/authorActions";
-import CourseForm from "./NewCourse";
+// import CourseForm from "./NewCourse";
 import { Link } from "react-router-dom";
+import Layout from '../layout';
 
 class CoursesPage extends React.Component {
   constructor(props) {
@@ -48,20 +49,21 @@ class CoursesPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="row">
-          <div className="col-6">
-            <h1>Courses</h1>
+      <Layout>
+        <div>
+          <div className="row">
+            <div className="col-6">
+              <h1>Courses</h1>
+            </div>
+            <div className="col-6">
+              <Link to="courses/new" className="btn btn-smaller btn-success">
+                New Course
+              </Link>
+            </div>
           </div>
-          <div className="col-6">
-            <Link to="courses/new" className="btn btn-smaller btn-success">
-              New Course
-            </Link>
-          </div>
+          <CourseList courses={this.props.courses} />
         </div>
-
-        <CourseList courses={this.props.courses} />
-      </div>
+      </Layout>  
     );
   }
 }

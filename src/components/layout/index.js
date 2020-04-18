@@ -1,5 +1,5 @@
 import React from 'react';
-import {Paper, Box, Grid } from '@material-ui/core';
+import {Paper, Box } from '@material-ui/core';
 import Header from './Header';
 
 const style = {
@@ -14,10 +14,14 @@ class LayoutComponet extends React.Component {
   }
 
   render(){
+    const { children } = this.props;
+
     return (
       <Paper container style={style.Paper}>
         <Header />
-        <h1>THis is layout header</h1>
+        <Box>
+          {children}
+        </Box>
       </Paper>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Paper, Box, Grid } from '@material-ui/core';
+import {Grid } from '@material-ui/core';
 import Layout from '../layout';
 
 const MaterialComponent = () => {

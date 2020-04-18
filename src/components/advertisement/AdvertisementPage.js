@@ -1,5 +1,6 @@
 import React from 'react';
 import AdvertisementComponent from './AdvertisementComponent';
+import Layout from '../layout';
 
 class AdvertisementPage extends React.Component {
   constructor(props){
@@ -38,29 +39,31 @@ class AdvertisementPage extends React.Component {
 
   render(){
     return(
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-8">
-            {this.state.ads.map((ad, i) => (
-              <AdvertisementComponent key={i} title={ad.title} description={ad.description}/>
-            ))}
-          </div>
-          <div className="col-4">
-            <form action="#" onChange={this.handleChange}>
-              <div className="form-group">
-                <input type="text" className="form-control" name='title' value={this.state.title} />
-              </div>
-              <div className="form-group"></div>
-                <input type="text" className="form-control" name='description' value={this.state.description}/>
-              <div className="form-group">
-                <button className="btn btn-sm btn-success" type="submit" onClick={this.createNewOffer}>
-                  Create New Offer
-                </button>
-              </div>
-            </form>
+      <Layout>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-8">
+              {this.state.ads.map((ad, i) => (
+                <AdvertisementComponent key={i} title={ad.title} description={ad.description}/>
+              ))}
+            </div>
+            <div className="col-4">
+              <form action="#" onChange={this.handleChange}>
+                <div className="form-group">
+                  <input type="text" className="form-control" name='title' value={this.state.title} />
+                </div>
+                <div className="form-group"></div>
+                  <input type="text" className="form-control" name='description' value={this.state.description}/>
+                <div className="form-group">
+                  <button className="btn btn-sm btn-success" type="submit" onClick={this.createNewOffer}>
+                    Create New Offer
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>  
+      </Layout>  
     );
   }
 }
