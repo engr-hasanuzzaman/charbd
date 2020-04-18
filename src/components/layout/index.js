@@ -1,6 +1,7 @@
 import React from 'react';
 import {Paper, Box } from '@material-ui/core';
 import Header from './Header';
+import PropTypes from 'prop-types';
 
 const style = {
   Paper: {
@@ -25,6 +26,10 @@ class LayoutComponet extends React.Component {
       </Paper>
     );
   }
+}
+
+LayoutComponet.propTypes = {
+  children: PropTypes.object
 }
 
 export default LayoutComponet;
