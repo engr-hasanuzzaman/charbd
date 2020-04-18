@@ -7,10 +7,10 @@ import PageNotFound from "./PageNotFound";
 import AdvertisementPage from "./advertisement/AdvertisementPage";
 import CoursesPage from "./course/CoursesPage";
 import NewCourse from "./course/NewCourse";
-import MaterialComponent from './material/Material';
+import MaterialComponent from "./material/Material";
 
 const App = () => (
-  <div className="container-fluid">
+  <div>
     <Switch>
       <Route exact path="/" component={HomePage}></Route>
       <Route path="/about" component={AboutPage}></Route>
