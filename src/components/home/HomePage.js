@@ -1,14 +1,13 @@
-import React from 'react';
-import Layout from '../layout';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import Layout from "../layout";
+import { Typography } from "@material-ui/core";
+// import Button from '@material-ui/core/Button';
 
-const HomePage = ()=>(
+const HomePage = () => (
   <Layout>
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-
-    <Button variant="contained" color="secondary">Default</Button>
+    <Typography variant="subtitle1">
+      Get discount information about your favorite product
+    </Typography>
   </Layout>
 );
 
