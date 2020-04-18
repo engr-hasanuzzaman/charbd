@@ -1,9 +1,12 @@
 import React from 'react';
+import Layout from '../layout';
 
 const HomePage = ()=>(
-  <div className='jumbotron'>
-    <h1>Please find proper discount near to your preferred location</h1>
-  </div>
+  <Layout>
+    <div className='jumbotron'>
+      <h1>Please find proper discount near to your preferred location</h1>
+    </div>
+  </Layout>
 );
 
 export default HomePage;

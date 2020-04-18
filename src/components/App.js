@@ -11,7 +11,6 @@ import MaterialComponent from './material/Material';
 
 const App = () => (
   <div className="container-fluid">
-    <Header />
     <Switch>
       <Route exact path="/" component={HomePage}></Route>
       <Route path="/about" component={AboutPage}></Route>
