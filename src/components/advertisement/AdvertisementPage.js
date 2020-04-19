@@ -53,22 +53,27 @@ class AdvertisementPage extends React.Component {
   render() {
     return (
       <Layout>
-        <>
-          <Grid item md={2}>
+        <Grid container>
+          <Grid item md={1}>
             Side Panel
           </Grid>
-          <Grid item md={10}>
-            {this.state.ads.map((ad, i) => (
-              <AdvertisementComponent
-                key={i}
-                title={ad.title}
-                description={ad.description}
-                img={ad.img}
-                price={ad.price}
-              />
-            ))}
+
+          <Grid item md={11} direction="column">
+            <Grid container spacing={5}>
+              {this.state.ads.map((ad, i) => (
+                <Grid key={i} md={4} spacing={5} item>
+                  <AdvertisementComponent
+                    key={i}
+                    title={ad.title}
+                    description={ad.description}
+                    img={ad.img}
+                    price={ad.price}
+                  />
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
-        </>
+        </Grid>
       </Layout>
     );
   }
