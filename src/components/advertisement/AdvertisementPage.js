@@ -1,7 +1,7 @@
 import React from "react";
 import AdvertisementComponent from "./AdvertisementComponent";
 import Layout from "../layout";
-import { Grid } from "@material-ui/core";
+import { Grid, Box } from "@material-ui/core";
 
 class AdvertisementPage extends React.Component {
   constructor(props) {
@@ -74,6 +74,9 @@ class AdvertisementPage extends React.Component {
             </Grid>
           </Grid>
         </Grid>
+        <Box display='flex' justifyContent>
+              <p>This flex with right justify content</p>
+        </Box>
       </Layout>
     );
   }
