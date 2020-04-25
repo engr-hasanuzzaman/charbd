@@ -8,6 +8,7 @@ import * as authorActions from "../../redux/actions/authorActions";
 // import CourseForm from "./NewCourse";
 import { Link } from "react-router-dom";
 import Layout from '../layout';
+import { Box, Typography } from '@material-ui/core';
 
 class CoursesPage extends React.Component {
   constructor(props) {
@@ -50,20 +51,16 @@ class CoursesPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div>
-          <div className="row">
-            <div className="col-6">
-              <h1>Courses</h1>
-            </div>
-            <div className="col-6">
-              <Link to="courses/new" className="btn btn-smaller btn-success">
+        <Box display='flex' justifyContent="flex-end" flexDirection='column'>
+        <Typography>
+          Courses
+        </Typography>
+         <Link to="courses/new" className="btn btn-smaller btn-success">
                 New Course
-              </Link>
-            </div>
-          </div>
+          </Link>
           <CourseList courses={this.props.courses} />
-        </div>
-      </Layout>  
+        </Box>
+      </Layout>
     );
   }
 }
