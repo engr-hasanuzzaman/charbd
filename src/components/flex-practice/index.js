@@ -1,20 +1,15 @@
 import React from 'react';
 import Layout from '../layout';
-const style = {
-  display: 'flex',
-  direction: 'col',
-  justifyContent: 'space-between'
-
-}
+import "./index.css";
 
 const foo = () => {
   return (
     <Layout>
-      <div style={ style }>
-        <p>first</p>
-        <p>second</p>
-        <p>third</p>
-      </div>
+      <nav className="container">
+        <div>Home</div>
+        <div>Search</div>
+        <div>Logout</div>
+      </nav>
     </Layout>
   )
 }
