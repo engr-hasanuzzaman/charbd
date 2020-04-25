@@ -3,13 +3,14 @@ import Layout from '../layout';
 const style = {
   display: 'flex',
   direction: 'col',
-  'justify-content': 'flex-end'
+  justifyContent: 'space-between'
+
 }
 
 const foo = () => {
   return (
     <Layout>
-      <div>
+      <div style={ style }>
         <p>first</p>
         <p>second</p>
         <p>third</p>
