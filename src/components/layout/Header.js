@@ -111,6 +111,11 @@ function Header() {
               Material Design
             </NavLink>
           </Button>
+          <Button color="primary" className={classes.link}>
+            <NavLink to="/flex" activeStyle={activeStyle}>
+              Flex experiment
+            </NavLink>
+          </Button>
         </nav>
         <Button color="primary" variant="contained" className={classes.link}>
           Login

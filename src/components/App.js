@@ -8,6 +8,7 @@ import AdvertisementPage from "./advertisement/AdvertisementPage";
 import CoursesPage from "./course/CoursesPage";
 import NewCourse from "./course/NewCourse";
 import MaterialComponent from "./material/Material";
+import Flex from "./flex-practice";
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/courses/new" component={NewCourse}></Route>
       <Route path="/courses" component={CoursesPage}></Route>
       <Route path="/test" component={MaterialComponent}></Route>
+      <Route path="/flex" component={Flex}></Route>
       <Route component={PageNotFound}></Route>
     </Switch>
   </div>

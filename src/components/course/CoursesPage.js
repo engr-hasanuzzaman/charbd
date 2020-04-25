@@ -51,7 +51,7 @@ class CoursesPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Box display='flex' justifyContent="flex-end" flexDirection='column'>
+        <Box display='flex' justifyContent="space-between" flexDirection='column' spaceBetween="3">
         <Typography>
           Courses
         </Typography>
