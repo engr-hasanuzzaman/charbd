@@ -1,32 +1,32 @@
 .container {
     border: 5px solid #ffcc5c;
     display: flex;
-    direction: column;
-    justify-content: space-around;
 }
 
-.container>div {
-    padding: 10px;
-    text-align: center;
-    font-size: 2em;
-    color: #ffeead;
+.item1 {
+    flex: 1;
+    margin-right: 2px;
 }
 
-
-/* html,
-body {
-    background-color: #ffeead;
-    margin: 10px;
-} */
-
-.container>div:nth-child(1) {
-    background-color: #96ceb4;
+.item2 {
+    flex: 2;
+    margin-right: 2px;
 }
 
-.container>div:nth-child(2) {
-    background-color: #ff6f69;
+.item3 {
+    flex: 1;
 }
 
-.container>div:nth-child(3) {
-    background-color: #88d8b0;
+@media (max-width: 400px) {
+    .container {
+        flex-direction: column;
+    }
+    .item2 {
+        order: 1;
+    }
+    .item1,
+    .item3 {
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
 }

@@ -6,9 +6,9 @@ const foo = () => {
   return (
     <Layout>
       <nav className="container">
-        <div>Home</div>
-        <div>Search</div>
-        <div>Logout</div>
+        <div className='btn btn-small btn-primary item1'>Home</div>
+        <input className='item2' type='text' placeholder='search item'/>
+        <div className='btn btn-small btn-primary item3'>Logout</div>
       </nav>
     </Layout>
   )
