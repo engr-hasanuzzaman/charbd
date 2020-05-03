@@ -91,9 +91,34 @@ const newCourse = {
   category: ""
 };
 
+// advertisements
+const advertisements = [{
+    id: 1,
+    title: "Get 20 discount on your favorite Cloth",
+    description: "Get 20 discount on your favorite Cloth",
+    price: "200 BDT",
+    img: "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
+  },
+  {
+    id: 2,
+    title: "Get 40 discount on your favorite Cloth",
+    description: "Get 20 discount on your favorite Cloth",
+    price: "2000 BDT",
+    img: "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
+  },
+  {
+    id: 3,
+    title: "Get 10 discount on your favorite Cloth",
+    description: "Get 20 discount on your favorite Cloth",
+    price: "3500 BDT",
+    img: "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
+  }
+]
+
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   newCourse,
   courses,
-  authors
+  authors,
+  advertisements
 };

@@ -54,6 +54,16 @@ server.post("/courses/", function(req, res, next) {
   }
 });
 
+// handle advertisement create
+server.post("/advertisements/", function(req, res, next) {
+  const error = validAdvertisement(req.body);
+  if (error) {
+    res.status(400).send(error);
+  } else {
+    next();
+  }
+});
+
 // Use default router
 server.use(router);
 
@@ -77,5 +87,11 @@ function validateCourse(course) {
   if (!course.title) return "Title is required.";
   if (!course.authorId) return "Author is required.";
   if (!course.category) return "Category is required.";
+  return "";
+}
+
+function validAdvertisement(ad) {
+  if (!ad.title) return "Title is required";
+  if (!ad.img) return "Image is required";
   return "";
 }
