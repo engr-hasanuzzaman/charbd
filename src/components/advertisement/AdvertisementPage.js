@@ -13,25 +13,25 @@ class AdvertisementPage extends React.Component {
           description: "Get 20 discount on your favorite Cloth",
           price: "200 BDT",
           img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
+            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
         },
         {
           title: "Get 40 discount on your favorite Cloth",
           description: "Get 20 discount on your favorite Cloth",
           price: "2000 BDT",
           img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
+            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
         },
         {
           title: "Get 10 discount on your favorite Cloth",
           description: "Get 20 discount on your favorite Cloth",
           price: "3500 BDT",
           img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg"
-        }
+            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
+        },
       ],
       title: "",
-      description: ""
+      description: "",
     };
 
     this.createNewOffer = this.createNewOffer.bind(this);
@@ -41,7 +41,7 @@ class AdvertisementPage extends React.Component {
   createNewOffer(event) {
     event.preventDefault();
     const ad = { title: this.state.title, description: this.state.description };
-    this.setState(state => {
+    this.setState((state) => {
       return { ads: [...state.ads, ad], title: "", description: "" };
     });
   }
@@ -74,8 +74,8 @@ class AdvertisementPage extends React.Component {
             </Grid>
           </Grid>
         </Grid>
-        <Box display='flex' justifyContent>
-              <p>This flex with right justify content</p>
+        <Box display="flex" justifyContent>
+          <p>This flex with right justify content</p>
         </Box>
       </Layout>
     );

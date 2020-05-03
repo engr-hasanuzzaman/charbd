@@ -8,11 +8,11 @@ import {
   CardContent,
   Button,
   CardActions,
-  Grid
+  Grid,
 } from "@material-ui/core";
 
 const classes = {
-  gridList: {}
+  gridList: {},
 };
 function AdvertisementComponent(props) {
   const { title, img, description, price } = props;
@@ -51,6 +51,6 @@ AdvertisementComponent.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
+  price: PropTypes.string.isRequired,
 };
 export default AdvertisementComponent;
