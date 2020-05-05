@@ -1,41 +1,27 @@
 import React from "react";
+// import { Connect } from 're'
 import AdvertisementComponent from "./AdvertisementComponent";
 import Layout from "../layout";
 import { Grid, Box } from "@material-ui/core";
+import { fetchAllAdvertisements } from "../../api/advertisementApi";
 
 class AdvertisementPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ads: [
-        {
-          title: "Get 20 discount on your favorite Cloth",
-          description: "Get 20 discount on your favorite Cloth",
-          price: "200 BDT",
-          img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
-        },
-        {
-          title: "Get 40 discount on your favorite Cloth",
-          description: "Get 20 discount on your favorite Cloth",
-          price: "2000 BDT",
-          img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
-        },
-        {
-          title: "Get 10 discount on your favorite Cloth",
-          description: "Get 20 discount on your favorite Cloth",
-          price: "3500 BDT",
-          img:
-            "https://images.all-free-download.com/images/graphiclarge/online_shopping_banner_hand_holding_card_bags_icons_6830791.jpg",
-        },
-      ],
+      ads: [],
       title: "",
       description: "",
     };
 
     this.createNewOffer = this.createNewOffer.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    fetchAllAdvertisements().then((ads) => {
+      this.setState({ ...this.state, ads: ads });
+    });
   }
 
   createNewOffer(event) {
@@ -82,4 +68,8 @@ class AdvertisementPage extends React.Component {
   }
 }
 
+// const mapStateToDispatch = () => {};
+// const mapDispatchToProps = {
+//   fetchAllAdvertisements,
+// };
 export default AdvertisementPage;
