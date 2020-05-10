@@ -1,9 +1,16 @@
 import React from "react";
-// import { Connect } from 're'
 import AdvertisementComponent from "./AdvertisementComponent";
 import Layout from "../layout";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, withStyles } from "@material-ui/core";
 import { fetchAllAdvertisements } from "../../api/advertisementApi";
+import { PropTypes } from "prop-types";
+
+const styles = (theme) => ({
+  contentWrapper: {
+    marginTop: "10px",
+    marginBottom: "5px",
+  },
+});
 
 class AdvertisementPage extends React.Component {
   constructor(props) {
@@ -37,9 +44,11 @@ class AdvertisementPage extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <Layout>
-        <Grid container>
+        <Grid container className={classes.contentWrapper}>
           <Grid item md={1}>
             Side Panel
           </Grid>
@@ -68,8 +77,8 @@ class AdvertisementPage extends React.Component {
   }
 }
 
-// const mapStateToDispatch = () => {};
-// const mapDispatchToProps = {
-//   fetchAllAdvertisements,
-// };
-export default AdvertisementPage;
+AdvertisementPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(AdvertisementPage);
