@@ -69,9 +69,6 @@ class AdvertisementPage extends React.Component {
             </Grid>
           </Grid>
         </Grid>
-        <Box display="flex" justifyContent>
-          <p>This flex with right justify content</p>
-        </Box>
       </Layout>
     );
   }

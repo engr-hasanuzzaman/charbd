@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container } from "@material-ui/core";
 import Header from "./Header";
 import PropTypes from "prop-types";
+import Footer from "./Footer";
 
 class LayoutComponet extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class LayoutComponet extends React.Component {
       <Container maxWidth="lg" fixed>
         <Header />
         <Box>{children}</Box>
+        <Footer/>
       </Container>
     );
   }
