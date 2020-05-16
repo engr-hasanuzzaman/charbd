@@ -1,17 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import DraftsIcon from '@material-ui/icons/Drafts';
-// import SendIcon from '@material-ui/icons/Send';
-// import ExpandLess from '@material-ui/icons/ExpandLess';
-// import ExpandMore from '@material-ui/icons/ExpandMore';
-// import StarBorder from '@material-ui/icons/StarBorder';
+import { Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,47 +15,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SidePane() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [category, setCategory] = React.useState(true);
+  const categories = ['Dress', 'Shoe', 'Electronic'];
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log("selected name is  " + name + ' and value is ' + value);
+    setCategory(value);
   };
 
   return (
-    <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
-        </ListSubheader>
-      }
-      className={classes.root}
-    >
-      <ListItem button>
-        <ListItemIcon>
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItem>
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
+    <FormControl className={classes.formControl}>
+      <InputLabel id="filter-by-category">Category</InputLabel>
+      <Select
+        labelId="filter-by-category"
+        id="category"
+        value={category}
+        onChange={handleChange}
+      >
+        { categories.map((c, i) => {
+          return <MenuItem key={i} value={c}>{c}</MenuItem>;
+        })}
+      </Select>
+    </FormControl>  
   );
 }
