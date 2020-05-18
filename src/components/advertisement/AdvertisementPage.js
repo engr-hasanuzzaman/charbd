@@ -5,6 +5,7 @@ import { Grid, Box, withStyles } from "@material-ui/core";
 import { fetchAllAdvertisements } from "../../api/advertisementApi";
 import { PropTypes } from "prop-types";
 import SidePane from './SidePane';
+import Example from '../common/Slider';
 
 const styles = (theme) => ({
   contentWrapper: {
@@ -55,6 +56,9 @@ class AdvertisementPage extends React.Component {
           </Grid>
 
           <Grid item md={10} direction="column">
+            <Grid>
+              <Example></Example>
+            </Grid>
             <Grid container spacing={5}>
               {this.state.ads.map((ad, i) => (
                 <Grid key={i} md={4} spacing={5} item>
