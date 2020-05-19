@@ -51,11 +51,7 @@ class AdvertisementPage extends React.Component {
     return (
       <Layout>
         <Grid container className={classes.contentWrapper}>
-          <Grid item md={2}>
-            <SidePane />
-          </Grid>
-
-          <Grid item md={10} direction="column">
+          <Grid item direction="column">
             <Grid>
               <Example></Example>
             </Grid>
