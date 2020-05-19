@@ -1,7 +1,7 @@
 import React from "react";
 import AdvertisementComponent from "./AdvertisementComponent";
 import Layout from "../layout";
-import { Grid, Box, withStyles } from "@material-ui/core";
+import { Grid, Box, withStyles, Paper } from "@material-ui/core";
 import { fetchAllAdvertisements } from "../../api/advertisementApi";
 import { PropTypes } from "prop-types";
 import SidePane from './SidePane';
@@ -52,8 +52,15 @@ class AdvertisementPage extends React.Component {
       <Layout>
         <Grid container className={classes.contentWrapper}>
           <Grid item direction="column">
-            <Grid>
-              <Example></Example>
+            <Grid container direction="row">
+              <Grid item md={8}>
+                <Example></Example>
+              </Grid>
+              <Grid md={4}>
+                <Box component={Paper} ml={2}>
+                  Text section
+                </Box>
+              </Grid>
             </Grid>
             <Grid container spacing={5}>
               {this.state.ads.map((ad, i) => (
