@@ -3,20 +3,6 @@ import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Link, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-// copy right component
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles(theme => ({
   "@global": {
     ul: {
